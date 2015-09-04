@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chefstep Code challenge</title>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body data-ng-app="dedupApp">
+  <div id="pagewrap">
+    <header>
+      <h1>Chefstep code challenge</h1>
+    </header>
+
+    <main data-ng-controller="mainController">
+      <section id="forms">
+
+        <p>The email generation is very basic. It just halves the input number and creates two arrays using a for loop, then I stick them back into one array. The email generator is to there to test the speed. To test the functionality, use the custom email input</p>
+
+        <form data-ng-submit="generate(num)">
+          <label for="emailGenerateAmount">Amount of emails to generate</label>
+          <input type="number" name="emailGenerateAmount" data-ng-model="num">
+          <button>Generate!</button>
+        </form>
+
+        <p><b>OR</b></p>
+
+        <form data-ng-submit="addEmail(email)">
+          <label for="newEmail">Add custom emails</label>
+          <input type="text" name="newEmail" data-ng-model="email">
+          <button>Add!</button>
+        </form>
+        <div id="clear">
+          <label for="clear">Clear All Lists</label>
+          <button name="clear" data-ng-click="clearEmails()">Clear!</button>
+        </div>
+
+        <button id="deduplicate" data-ng-click="deduplicate(emails)">REMOVE DUPLICATES</button>
+
+      </section>
+
+      <section id="left">
+        <h2>Original Email List</h2>
+        <ul>
+          <li data-ng-repeat="email in emails track by $index">
+            {{email}}
+          </li>
+        </ul>
+      </section>
+
+      <section id="middle">
+        <h2>Unique Email List</h2>
+        <ul>
+          <li data-ng-repeat="email in uniques track by $index">
+            {{email}}
+          </li>
+        </ul>
+      </section>
+
+      <section id="right">
+        <h2>Duplicate Email List</h2>
+        <ul>
+          <li data-ng-repeat="email in duplicates track by $index">
+            {{email}}
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script src="./bundle.js"></script>
+  </div>
+</body>
+</html>
