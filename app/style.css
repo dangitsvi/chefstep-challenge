@@ -1,0 +1,65 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #666;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#pagewrap {
+  padding: 5px;
+  width: 960px;
+  margin: 20px auto;
+}
+header {
+  height: 100px;
+  padding: 0 15px;
+}
+#left {
+  width: 290px;
+  float: left;
+  padding: 5px 15px;
+  background: #f0efef;
+}
+
+#middle {
+  width: 294px;
+  float: left;
+  padding: 5px 15px;
+  margin: 0px 5px 5px 5px;
+}
+
+#right {
+  width: 270px;
+  padding: 5px 15px;
+  float: left;
+  background: #f0efef;
+}
+
+#forms {
+  margin: 20px;
+}
+footer {
+  clear: both;
+  padding: 0 15px;
+}
+
+#clear {
+  margin-top: 10px;
+}
+
+#deduplicate {
+  margin-top: 10px;
+}
+
+header, #left, #middle, #right {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#pagewrap, header, #left, #middle, #right, footer {
+  border: solid 1px #ccc;
+}
