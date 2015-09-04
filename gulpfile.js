@@ -1,10 +1,16 @@
 var gulp = require('gulp');
 var webpack = require('gulp-webpack');
 var jshint = require('gulp-jshint');
+var mocha = require('gulp-mocha');
 
 gulp.task('jshint', function() {
   return gulp.src(['*.js', 'app/**/*.js'])
 })
+
+gulp.task('test', function() {
+  return gulp.src('./tests/test.js')
+      .pipe(mocha());
+});
 
 gulp.task('webpackdev', function() {
   return gulp.src('./app/**/*.js')
